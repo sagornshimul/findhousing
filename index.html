@@ -360,7 +360,7 @@
   }
 
   /* ============================================================
-     ⭐⭐ RENTER LOAN POPUP ⭐⭐
+     RENTER LOAN POPUP
      ============================================================ */
   .loan-overlay {
     position: fixed; inset: 0; z-index: 999;
@@ -399,7 +399,7 @@
     position: relative;
     background: linear-gradient(135deg, #166534, #16a34a 55%, #22c55e);
     color: #fff;
-    padding: 30px 22px 24px;
+    padding: 34px 22px 28px;
     text-align: center;
     overflow: hidden;
   }
@@ -439,43 +439,11 @@
     transform: rotate(90deg);
   }
 
-  /* Urgency badge */
-  .loan-urgency {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #fbbf24;
-    color: #78350f;
-    font-size: .68rem;
-    font-weight: 900;
-    letter-spacing: .06em;
-    padding: 5px 12px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    position: relative;
-    box-shadow: 0 4px 14px rgba(251,191,36,.5);
-    animation: urgencyPulse 1.6s ease-in-out infinite;
-  }
-  @keyframes urgencyPulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.05); }
-  }
-  .loan-urgency .dot-live {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: #dc2626;
-    animation: liveDot 1.2s ease-in-out infinite;
-  }
-  @keyframes liveDot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%      { opacity: .4; transform: scale(.85); }
-  }
-
   .loan-modal-cash {
     display: inline-block;
     font-size: 3rem;
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     position: relative;
     filter: drop-shadow(0 6px 14px rgba(0,0,0,.28));
     animation: cashBounce 1.9s ease-in-out infinite;
@@ -486,8 +454,8 @@
   }
 
   .loan-modal-header h2 {
-    margin: 0 0 8px;
-    font-size: 1.48rem;
+    margin: 0 0 10px;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -.025em;
     line-height: 1.18;
@@ -501,11 +469,12 @@
     color: #fef3c7;
   }
   .loan-modal-header p {
-    margin: 0;
-    font-size: .9rem;
+    margin: 0 auto;
+    font-size: .92rem;
     opacity: .97;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.55;
+    max-width: 380px;
   }
 
   /* ---- BODY ---- */
@@ -518,7 +487,7 @@
     background: #f0fdf4;
     border-top: 1px solid #bbf7d0;
     border-bottom: 1px solid #bbf7d0;
-    margin: -22px -22px 18px;
+    margin: -22px -22px 20px;
     padding: 0;
   }
   .loan-trust-strip .item {
@@ -542,43 +511,25 @@
     line-height: 1.15;
   }
 
-  .loan-use-title {
-    font-size: .78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .06em;
+  /* Key message highlight box */
+  .loan-key-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1.5px solid #86efac;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: .9rem;
     color: #166534;
-    margin: 0 0 10px;
-    text-align: center;
+    font-weight: 700;
+    line-height: 1.45;
   }
-
-  .loan-benefits {
-    list-style: none;
-    padding: 0; margin: 0 0 18px;
-    display: grid; gap: 8px;
-  }
-  .loan-benefits li {
-    display: flex; align-items: center; gap: 10px;
-    font-size: .89rem;
-    color: var(--ink-soft);
-    font-weight: 600;
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 10px 12px;
-  }
-  .loan-benefits li .emoji {
-    font-size: 1.05rem;
+  .loan-key-point .kp-icon {
+    font-size: 1.6rem;
     flex: none;
     line-height: 1;
-  }
-  .loan-benefits li .check {
-    width: 20px; height: 20px; flex: none;
-    border-radius: 50%;
-    background: #dcfce7; color: #15803d;
-    display: grid; place-items: center;
-    font-size: .68rem; font-weight: 900;
-    margin-left: auto;
   }
 
   .loan-social {
@@ -589,7 +540,7 @@
     border: 1px solid #fde68a;
     border-radius: 10px;
     padding: 10px 12px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-size: .82rem;
     color: #78350f;
     font-weight: 600;
@@ -711,13 +662,13 @@
 
   @media (max-width: 480px) {
     .loan-modal { max-width: 100%; border-radius: 18px; }
-    .loan-modal-header { padding: 26px 16px 20px; }
+    .loan-modal-header { padding: 28px 16px 22px; }
     .loan-modal-body { padding: 20px 16px 22px; }
     .loan-trust-strip { margin: -20px -16px 16px; }
     .loan-modal-cash { font-size: 2.6rem; }
     .loan-modal-header h2 { font-size: 1.28rem; }
     .loan-cta-btn { font-size: .97rem; padding: 16px; }
-    .loan-benefits li { font-size: .84rem; padding: 9px 10px; }
+    .loan-key-point { font-size: .85rem; padding: 12px 14px; }
     .loan-steps .step { font-size: .66rem; padding: 9px 4px; }
   }
 
@@ -929,16 +880,11 @@
       <span class="loan-modal-flag">🇺🇸 USA</span>
       <button type="button" class="loan-modal-close" id="loanPopupClose" aria-label="Close popup">&times;</button>
 
-      <div class="loan-urgency">
-        <span class="dot-live" aria-hidden="true"></span>
-        Limited time offer
-      </div>
-
       <div class="loan-modal-cash" aria-hidden="true">💰</div>
       <h2 id="loanTitle">
-        Moving soon? Get up to <span class="amount">$5,000</span> for your move
+        If you're a renter, <span class="amount">you can get a loan</span> — easily
       </h2>
-      <p>Deposit, first month's rent, moving truck — cover it all with a <strong>fast, easy loan built for renters.</strong></p>
+      <p>Getting approved as a renter is easier than you think. No perfect credit required.</p>
     </div>
 
     <!-- BODY -->
@@ -959,6 +905,12 @@
         </div>
       </div>
 
+      <!-- Key message -->
+      <div class="loan-key-point">
+        <span class="kp-icon" aria-hidden="true">🎯</span>
+        <span>Renters get approved for up to <strong>$5,000</strong> — fast, simple, and 100% online.</span>
+      </div>
+
       <div class="loan-social">
         <div class="avatars" aria-hidden="true">
           <span>JD</span><span>MK</span><span>AS</span>
@@ -967,30 +919,6 @@
           <strong>12,400+ renters</strong> got approved this month
         </div>
       </div>
-
-      <p class="loan-use-title">Renters use it for</p>
-      <ul class="loan-benefits">
-        <li>
-          <span class="emoji">🏠</span>
-          <span>Security deposit &amp; first month's rent</span>
-          <span class="check">✓</span>
-        </li>
-        <li>
-          <span class="emoji">🚚</span>
-          <span>Moving truck &amp; relocation costs</span>
-          <span class="check">✓</span>
-        </li>
-        <li>
-          <span class="emoji">🛋️</span>
-          <span>Furniture &amp; essentials for your new place</span>
-          <span class="check">✓</span>
-        </li>
-        <li>
-          <span class="emoji">💳</span>
-          <span>Application fees, utilities &amp; more</span>
-          <span class="check">✓</span>
-        </li>
-      </ul>
 
       <div class="loan-steps" aria-hidden="true">
         <div class="step"><span class="num">1</span><br>Quick<br>Apply</div>
@@ -1079,7 +1007,7 @@
   const loanPopup      = document.getElementById('loanPopup');
   const loanPopupClose = document.getElementById('loanPopupClose');
   const loanDeclineBtn = document.getElementById('loanDeclineBtn');
-  const POPUP_KEY      = 'r2oh_loan_popup_dismissed_v2';
+  const POPUP_KEY      = 'r2oh_loan_popup_dismissed_v3';
   const POPUP_DELAY    = 3500;
   const POPUP_COOLDOWN = 24 * 60 * 60 * 1000;
 
